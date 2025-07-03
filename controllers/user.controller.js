@@ -41,6 +41,7 @@ let googleSignupController = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       maxAge: 60 * 60 * 1000,
+      secure: true
     });
 
     return res.status(200).json({
@@ -107,7 +108,8 @@ let loginController = async (req,res)=>{
 
         res.cookie('token', token,{
             httpOnly: true,
-            maxAge: 60 * 60 * 1000
+            maxAge: 60 * 60 * 1000,
+            secure: true
         })
 
         return res.status(200).json({
